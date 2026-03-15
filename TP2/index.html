@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TP2 - Formulaire d'inscription</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Formulaire d'inscription</h1>
+    </header>
+
+    <main>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <!-- Informations personnelles -->
+            <fieldset>
+                <legend>Informations personnelles</legend>
+                
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" required placeholder="Votre nom">
+
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" required placeholder="Votre prénom">
+
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" required placeholder="exemple@mail.com">
+
+                <label for="tel">Téléphone :</label>
+                <input type="tel" id="tel" name="tel" pattern="[0-9]{10}" title="10 chiffres requis" required placeholder="0601020304">
+
+                <label for="dob">Date de naissance :</label>
+                <input type="date" id="dob" name="dob" required>
+            </fieldset>
+
+            <!-- Mot de passe -->
+            <fieldset>
+                <legend>Mot de passe</legend>
+                
+                <label for="pwd">Mot de passe :</label>
+                <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[A-Z]).{8,}" 
+                       title="Au moins 8 caractères, 1 majuscule et 1 chiffre" required>
+
+                <label for="pwd2">Confirmer le mot de passe :</label>
+                <input type="password" id="pwd2" name="pwd2" required>
+            </fieldset>
+
+            <!-- Pays et Genre -->
+            <fieldset>
+                <legend>Informations supplémentaires</legend>
+
+                <label for="pays">Pays :</label>
+                <select id="pays" name="pays" required>
+                    <option value="">--Sélectionnez--</option>
+                    <option value="Maroc">Maroc</option>
+                    <option value="France">France</option>
+                    <option value="Autre">Autre</option>
+                </select>
+
+                <label>Genre :</label>
+                <label><input type="radio" name="genre" value="Homme" required> Homme</label>
+                <label><input type="radio" name="genre" value="Femme" required> Femme</label>
+                <label><input type="radio" name="genre" value="Autre" required> Autre</label>
+            </fieldset>
+
+            <!-- Centres d'intérêt et biographie -->
+            <fieldset>
+                <legend>Centres d'intérêt et biographie</legend>
+
+                <label>Centres d'intérêt :</label>
+                <label><input type="checkbox" name="interet" value="Data"> Data</label>
+                <label><input type="checkbox" name="interet" value="Web"> Web</label>
+                <label><input type="checkbox" name="interet" value="AI"> IA</label>
+                <label><input type="checkbox" name="interet" value="CV"> Computer Vision</label>
+
+                <label for="bio">Biographie :</label>
+                <textarea id="bio" name="bio" maxlength="500" placeholder="Écrivez ici..." required></textarea>
+            </fieldset>
+
+            <!-- Photo et CGU -->
+            <fieldset>
+                <legend>Photo et CGU</legend>
+
+                <label for="photo">Photo de profil :</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+
+                <label><input type="checkbox" name="cgu" required> J’accepte les conditions générales d’utilisation</label>
+            </fieldset>
+
+            <button type="submit">S’inscrire</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Noureddine Imgharn</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #0055aa;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #003366;
+    border-bottom: 2px solid #0055aa;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;         /* Prend toute la largeur du conteneur */
+    height: auto;        /* Garde le ratio original de l'image */
+    display: block;      /* Supprime les espaces en dessous */
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+}
+
+/* Limiter la hauteur maximale pour éviter que l'image soit trop grande */
+.hero-image {
+    max-height: 60vh;       /* 60% de la hauteur de la fenêtre */
+    overflow: hidden;       /* Coupe les parties qui dépassent */
+}
+
+.gallery picture img {
+    width: 30%;
+    margin: 10px;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    margin: 5px 0 15px 0;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button {
+    background: #0055aa;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #003366;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #003366;
+    color: white;
+    margin-top: 30px;
+}
+.team figure img {
+    width: 200px;       /* largeur fixe, tu peux changer */
+    height: auto;       /* garde les proportions originales */
+    border-radius: 10px; /* optionnel, coins arrondis */
+    display: block;      /* supprime les espaces en dessous */
+    margin: 0 auto;      /* centre l'image dans le figure */
+}
+
+.team figure {
+    text-align: center;  /* centre la légende */
+    margin: 20px;
+    display: inline-block; /* pour que plusieurs images soient côte à côte */
+}
