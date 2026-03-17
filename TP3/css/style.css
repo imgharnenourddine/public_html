@@ -1,3 +1,11 @@
+/* RESET GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
@@ -5,11 +13,16 @@ body {
     padding: 0;
 }
 
+/* HEADER */
 header {
     background: #0055aa;
     color: white;
     padding: 15px 20px;
     text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
 }
 
 nav a {
@@ -23,6 +36,7 @@ nav a:hover {
     text-decoration: underline;
 }
 
+/* MAIN CONTENT */
 main {
     max-width: 900px;
     margin: 20px auto;
@@ -36,17 +50,22 @@ h2 {
     margin-top: 20px;
 }
 
-/* Hero section */
+/* HERO SECTION */
 .hero {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
 
+.hero-image {
+    max-height: 60vh;       /* hauteur maximale */
+    overflow: hidden;
+}
+
 .hero-image img {
-    width: 100%;         /* Prend toute la largeur du conteneur */
-    height: auto;        /* Garde le ratio original de l'image */
-    display: block;      /* Supprime les espaces en dessous */
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .hero-text {
@@ -60,17 +79,7 @@ h2 {
     text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
 }
 
-/* Limiter la hauteur maximale pour éviter que l'image soit trop grande */
-.hero-image {
-    max-height: 60vh;       /* 60% de la hauteur de la fenêtre */
-    overflow: hidden;       /* Coupe les parties qui dépassent */
-}
-
-.gallery picture img {
-    width: 30%;
-    margin: 10px;
-}
-
+/* FORMULAIRES */
 form input, form textarea, form select {
     width: 100%;
     margin: 5px 0 15px 0;
@@ -93,6 +102,7 @@ button:hover {
     background: #003366;
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 15px;
@@ -100,16 +110,49 @@ footer {
     color: white;
     margin-top: 30px;
 }
+
+/* TEAM SECTION */
 .team figure img {
-    width: 200px;       /* largeur fixe, tu peux changer */
-    height: auto;       /* garde les proportions originales */
-    border-radius: 10px; /* optionnel, coins arrondis */
-    display: block;      /* supprime les espaces en dessous */
-    margin: 0 auto;      /* centre l'image dans le figure */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 .team figure {
-    text-align: center;  /* centre la légende */
+    text-align: center;
     margin: 20px;
-    display: inline-block; /* pour que plusieurs images soient côte à côte */
+    display: inline-block;
+}
+
+/* GALERIE */
+/* GALERIE */
+/* GALERIE */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;           /* permet de passer à la ligne si écran trop petit */
+    justify-content: center;   /* centre les images horizontalement */
+    gap: 20px;                 /* espace entre les images */
+    text-align: center;
+    padding: 20px 0;
+}
+
+.gallery figure {
+    width: 220px;              /* largeur fixe pour toutes les images */
+}
+
+.gallery figure img {
+    width: 220px;
+    height: 150px;             /* même hauteur pour toutes */
+    object-fit: cover;         /* évite la déformation */
+    border-radius: 10px;
+    display: block;
+}
+
+.gallery figcaption {
+    margin-top: 8px;
+    font-weight: bold;
+    font-size: 16px;
 }
