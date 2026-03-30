@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TP4  - Corrigé</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #4f46e5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #4f46e5;
+}
+
+.question {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.answer {
+  margin-left: 15px;
+  color: #333;
+}
+
+/* Demo styles */
+.demo-navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #222;
+  color: white;
+  padding: 10px;
+}
+
+.demo-links {
+  display: flex;
+  gap: 10px;
+}
+
+.demo-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.demo-cards {
+  display: flex;
+  gap: 10px;
+}
+
+.demo-card {
+  flex: 1;
+  background: #eee;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.grid-item {
+  background: #ddd;
+  padding: 10px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #ccc;
+  border-top: 5px solid #4f46e5;
+  border-radius: 50%;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>TP4 - Corrigé</h1>
+</header>
+
+<div class="container">
+
+<!-- EXERCICE 1 -->
+<section>
+<h2>Exercice 1 : Sélecteurs et spécificité</h2>
+
+<p class="question">1. Sélectionner tous les liens dans la navigation :</p>
+<p class="answer">.main-nav a</p>
+
+<p class="question">2. Sélectionner uniquement le lien actif :</p>
+<p class="answer">.main-nav a.active</p>
+
+<p class="question">3. Sélectionner l'article featured :</p>
+<p class="answer">.post.featured</p>
+
+<p class="question">4. Premier paragraphe de chaque article :</p>
+<p class="answer">.post p:first-of-type</p>
+
+<p class="question">5. Les éléments li pairs :</p>
+<p class="answer">li:nth-child(even)</p>
+
+<p class="question">Spécificité (ordre croissant) :</p>
+<p class="answer">p < .text < p.text < #main .text p < #main</p>
+
+<p class="question">Si égalité :</p>
+<p class="answer">La dernière règle dans le CSS est appliquée</p>
+
+<p class="question">Pourquoi éviter !important :</p>
+<p class="answer">Cela casse la cascade CSS et rend le code difficile à maintenir</p>
+
+</section>
+
+<!-- EXERCICE 2 -->
+<section>
+<h2>Exercice 2 : Box Model</h2>
+
+<p class="question">Largeur totale avec content-box :</p>
+<p class="answer">350px</p>
+
+<p class="question">Largeur avec border-box :</p>
+<p class="answer">300px</p>
+
+<p class="question">Reset CSS :</p>
+<p class="answer">* { box-sizing: border-box; margin:0; padding:0; }</p>
+
+<p class="question">Centrage horizontal :</p>
+<p class="answer">margin: 0 auto;</p>
+
+<p class="question">Centrage vertical + horizontal :</p>
+<p class="answer">display:flex; justify-content:center; align-items:center; height:100vh;</p>
+
+</section>
+
+<!-- EXERCICE 3 -->
+<section>
+<h2>Exercice 3 : Flexbox</h2>
+
+<p class="question">Navbar :</p>
+
+<div class="demo-navbar">
+  <div>Noureddine </div>
+  <div class="demo-links">
+    <a href="#">Accueil</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+</div>
+
+<p class="answer">display:flex; justify-content:space-between;</p>
+
+<p class="question">Cartes :</p>
+
+<div class="demo-cards">
+  <div class="demo-card">Carte 1</div>
+  <div class="demo-card">Carte 2</div>
+  <div class="demo-card">Carte 3</div>
+</div>
+
+<p class="answer">display:flex + flex:1 + margin-top:auto pour aligner les boutons</p>
+
+</section>
+
+<!-- EXERCICE 4 -->
+<section>
+<h2>Exercice 4 : CSS Grid</h2>
+
+<p class="question">Grille responsive :</p>
+
+<div class="demo-grid">
+  <div class="grid-item">1</div>
+  <div class="grid-item">2</div>
+  <div class="grid-item">3</div>
+  <div class="grid-item">4</div>
+</div>
+
+<p class="answer">grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));</p>
+
+<p class="question">Layout Grid Areas :</p>
+<p class="answer">
+header / sidebar / main / footer avec grid-template-areas
+</p>
+
+</section>
+
+<!-- EXERCICE 5 -->
+<section>
+<h2>Exercice 5 : Responsive Design</h2>
+
+<p class="question">Mobile first :</p>
+<p class="answer">Utilisation de min-width dans les media queries</p>
+
+<p class="question">Media queries :</p>
+<p class="answer">
+@media (min-width:768px) pour tablette<br>
+@media (min-width:1024px) pour desktop
+</p>
+
+</section>
+
+<!-- EXERCICE 6 -->
+<section>
+<h2>Exercice 6 : Variables CSS</h2>
+
+<p class="question">Exemple :</p>
+<p class="answer">
+:root { --primary:#4f46e5; }<br>
+var(--primary)
+</p>
+
+<p class="answer">Permet de gérer les thèmes facilement</p>
+
+</section>
+
+<!-- EXERCICE 7 -->
+<section>
+<h2>Exercice 7 : Transitions & Animations</h2>
+
+<p class="question">Bouton :</p>
+<button>Hover me</button>
+
+<p class="answer">transition + transform: scale()</p>
+
+<p class="question">Spinner :</p>
+<div class="loader"></div>
+
+<p class="answer">@keyframes rotation infinie</p>
+
+</section>
+
+<!-- EXERCICE 8 -->
+<section>
+<h2>Exercice 8 : Quiz</h2>
+
+<p class="question">1 :</p>
+<p class="answer">b) #header a</p>
+
+<p class="question">2 :</p>
+<p class="answer">b) 200px</p>
+
+<p class="question">3 :</p>
+<p class="answer">c) justify-content + align-items</p>
+
+<p class="question">4 :</p>
+<p class="answer">b) fraction de l’espace disponible</p>
+
+<p class="question">5 :</p>
+<p class="answer">b) min-width</p>
+
+</section>
+
+</div>
+
+</body>
+</html>
